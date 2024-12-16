@@ -39,6 +39,9 @@ gem "kamal", require: false
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem "thruster", require: false
 
+# factory_bot_rails provides integration between factory_bot and rails 5.0 or newer
+gem "factory_bot_rails", "~> 6.4", ">= 6.4.4"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -53,7 +56,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # rspec-rails integrates the Rails testing helpers into RSpec.
-  gem 'rspec-rails', '~> 7.1'
+  gem "rspec-rails", "~> 7.1"
 end
 
 group :development do
@@ -61,3 +64,9 @@ group :development do
   gem "web-console"
 end
 
+group :test do
+  # Shoulda Matchers provides RSpec- and Minitest-compatible one-liners to test 
+  # common Rails functionality that, if written by hand, would be much longer, 
+  # more complex, and error-prone.
+  gem 'shoulda-matchers', '~> 6.4'
+end

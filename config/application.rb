@@ -1,4 +1,5 @@
 require_relative "boot"
+require "factory_bot_rails"
 
 require "rails"
 # Pick the frameworks you want:
@@ -38,5 +39,11 @@ module Blog
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Factory_Bot_Rails Config
+    config.generators do |g|
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_bot, dir: "spec/factories"
+    end
   end
 end
