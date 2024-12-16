@@ -51,6 +51,9 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # rspec-rails integrates the Rails testing helpers into RSpec.
+  gem 'rspec-rails', '~> 7.1'
 end
 
 group :development do
